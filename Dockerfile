@@ -26,7 +26,7 @@ RUN apk add --update --virtual build-deps \
     linux-headers \
     openssl-dev \
   && pip install --no-cache-dir -U pip \
-  && pip install --no-cache-dir -r requirements.txt \
+  && pip install --no-cache-dir --no-use-pep517 -r requirements.txt \
   && apk del build-deps \
   && rm -rf /var/cache/apk/*
 
